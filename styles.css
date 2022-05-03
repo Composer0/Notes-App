@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Russo+One&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(121,116,198);
+    background: linear-gradient(121deg, rgba(121,116,198,1) 0%, rgba(125,250,255,1) 0%, rgba(20,22,54,1) 49%, rgba(213,16,192,1));
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    /* Flex-wrap: wrap; allows notes to go on to the next line when needed. */
+    margin: 0;
+    padding-top: 3rem;
+    height: auto;
+    width: 100vw;
+    background-attachment: fixed;
+    /* for a scrolling page like this where we want a static background this has to be used in order to avoid repeating an image at the end of where the html body is. */
+}
+
+#webname {
+    font-family: 'Russo One', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color:#f3e600;
+}
+
+/* add note button */
+.add {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    background-color: #74dd82;
+    border: none;
+    border-width: .5px;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: #4baf58;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    color: rgb(209, 245, 228);
+    border-width: .5px;
+}
+
+
+/* note size & shape */
+.note {
+    background-color: rgb(250, 216, 226);
+    box-shadow: 0 0 10px 4px rgba(0,0,0, 0.1);
+    margin: 50px 20px;
+    height: 400px;
+    width: 400px;
+}
+
+/* this can be done with or without the note class. By adding .note we are narrowing down that the we are looking at the note div and then the tool div. */
+.note .tools {
+    background-color: #9c74dd;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+/* same statement as above. note and tools class are present for the sake of providing clarity in the event that additional buttons are created. */
+.note .tools button {
+    background-color:transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.note .tools button:hover {
+    color:rgb(158, 185, 172);
+}
+
+
+.note textarea {
+    outline: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: none;
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    color: rgb(7, 40, 73);
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: auto;
+    z-index: -1;
+}

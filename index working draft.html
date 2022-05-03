@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
+    
+    <title>Notes App</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="webname">Notes App</h1>
+    </header>
+
+    <button class="add" id="add">
+        <i class="fas fa-plus"></i> Add Note
+    </button>
+
+    <div class="note">
+        <div class="tools">
+            <button class="edit"><i class="fas fa-edit"></i></button>
+            <button class="delete"><i class="fas fa-trash-alt"></i></button>
+        </div>
+
+        <div class="hidden"></div>
+        <textarea></textarea>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.15/marked.min.js" integrity="sha512-VPdTATEqYWxDgVwJtoSSA/OSa0RReaQexL/3d8WX3CAV4xu83OjMmfI++NMA/cUhx+WC3dth10CJcBDxPX8Shg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <p>Brought to life by Orion Palmer</p>
+</footer>
+
+</html>
+
+<!-- Uses a markdown library.
+Works with local storage meaning that it only your browser will be able to see the contents of what you write unless you delete your content either through the app or through your browser/hard drive. -->
