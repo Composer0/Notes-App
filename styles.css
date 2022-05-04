@@ -92,6 +92,10 @@ body {
     padding: 20px;
 }
 
+.main{
+    padding: .25rem;
+}
+
 .hidden {
     display: none;
 }

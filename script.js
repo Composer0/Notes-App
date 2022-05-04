@@ -1,5 +1,13 @@
 const addBtn = document.getElementById('add');
 
+// this pulls information that was added to local storage on previous trip out.
+const notes = JSON.parse(localStorage.getItem('notes'));
+
+
+if(notes) {
+    notes.forEach(note => addNewNote(note))
+}
+
 // Create a note function. Relies on const addBtn
 addBtn.addEventListener('click', () => addNewNote(''));
 
@@ -24,10 +32,12 @@ function addNewNote(text = '') {
     const textArea = note.querySelector('textarea')
 
     textArea.value = text
-    main.innerHTML = marked (text)
+    main.innerHTML = marked.parse(text)
 
     deleteBtn.addEventListener('click', () => {
         note.remove();
+
+        updateLS()
     })
 
     editBtn.addEventListener('click', () => {
@@ -36,7 +46,36 @@ function addNewNote(text = '') {
     })
     // editBtn is being used to lock in the text that was written into the note.
 
+    textArea.addEventListener('input', (e) => {
+        const { value } = e.target
+
+        main.innerHTML = marked.parse(value)
+
+        updateLS()
+    })
+
     document.body.appendChild(note);
 }
 
-// 
+localStorage.setItem('name', 'Orion')
+localStorage.getItem('name')
+localStorage.removeItem('name')
+
+// Only strings can be stored into local storage.
+
+
+// Updates Local Storage actively through each keytype.
+function updateLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes = []
+
+    notesText.forEach(note => notes.push(note.value))
+
+    // store into local Storage
+    localStorage.setItem('notes', JSON.stringify(notes))
+}
+
+// Parsing functions with JSON/APIs. Parse turn data into a JavaScript object that can be manipulated.
+
+// Session storage will clear items from local storage on reboot. They are being consumer minded and thier desingn.
